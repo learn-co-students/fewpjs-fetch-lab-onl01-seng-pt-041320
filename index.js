@@ -1,5 +1,10 @@
+//  fetch request to the Game of Thrones API
 function fetchBooks() {
-
+  return fetch('https://anapioficeandfire.com/api/books')
+  // The returned response should be converted to JSON
+  .then(resp => resp.json())
+  // Then, call the second function, renderBooks(), passing in the API's returned JSON data as the argument. 
+  .then(json => renderBooks(json));
 }
 
 function renderBooks(books) {
